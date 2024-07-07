@@ -7,16 +7,23 @@ import numpy as np
 
 #criando nomes e nascimento para adicionar a planilia
 nome = ['rafa', 'kaua', 'tiago']
-nacimento = [2005, 1999, 2007]
+mes_nascimento = [11, 6, 9]
+nascimento = [2005, 1999, 2007]
 
-#criando coluna
-list = {'nome': nome, 'nascimento': nacimento}
 
 #pegando data atual
-data_atual = datetime.datetime.now()
-data_atual = data_atual.year 
+relogio_atual = datetime.datetime.now()
+ano_atual = relogio_atual.year 
+data_atual = relogio_atual.month
+
+#criando coluna
+list = {'nome': nome, 'nascimento': nascimento, 'mes_nascimento' : mes_nascimento}
 
 df1 = pd.DataFrame(list)
-df1['idade'] = data_atual - df1['nascimento']
+data = [data_atual]* len(df1['mes_nascimento'])
+print(data)
+df1['idade'] = (ano_atual - df1['nascimento']) - (df1['mes_nascimento'] > data)
 
+
+    
 print(df1)
