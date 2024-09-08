@@ -1,11 +1,11 @@
-print("programa idade em uma planilia")
+print("programa idade em uma planilha")
 import pandas as pd
 import datetime
 
 import numpy as np
 
 
-#criando nomes e nascimento para adicionar a planilia
+#criando nomes e nascimento para adicionar a planilha
 dado = []
 nome = []
 mes_nascimento = []
